@@ -102,7 +102,7 @@ class Article:
             async with session.get(url=first_url) as r:
 
                 if r.status == 404:
-                    raise HTTPNotFound(text=f'url: {first_url}')
+                    raise HTTPNotFound(text=first_url)
 
                 first_data = await r.json()
 
@@ -110,7 +110,7 @@ class Article:
             async with session.get(url=second_url) as r:
 
                 if r.status == 404:
-                    raise HTTPNotFound(text=f'url: {second_url}')
+                    raise HTTPNotFound(text=second_url)
 
                 second_data = await r.json()
 

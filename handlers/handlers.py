@@ -3,6 +3,7 @@ from aiogram.filters import Command
 from aiogram.types import Message, FSInputFile, InputMediaDocument
 import os
 from aiogram.utils.media_group import MediaGroupBuilder
+from aiohttp.web_exceptions import HTTPNotFound
 from dotenv import load_dotenv
 from bot import bot
 from classes.article import Article
@@ -48,11 +49,15 @@ async def check_article(message: Message):
     ans_message = await message.answer('Загрузка...')
     try:
         art = Article(message.text)
+        await art.scrap_wb()
     except ValueError as ex:
         await ans_message.edit_text(text=str(ex))
         return
+    except HTTPNotFound as ex:
+        await ans_message.edit_text(text='Нет данных. Неверный артикул')
+        return
 
-    await art.scrap_wb()
+
     if art.available:
         data = art.get_data
         text = dict_to_data(data=data)
