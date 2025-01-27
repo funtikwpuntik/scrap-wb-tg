@@ -2,8 +2,8 @@ import asyncio
 
 from aiogram import Dispatcher
 from bot import bot
-from handlers import router
-from loggers import error_logger
+from handlers.handlers import router
+from utils.loggers import error_logger
 
 
 dp = Dispatcher()

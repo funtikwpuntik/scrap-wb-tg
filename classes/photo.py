@@ -1,8 +1,8 @@
 import aiohttp
 import os
 
-from loggers import error_logger
-from storage import Storage
+from utils.loggers import error_logger
+from classes.storage import Storage
 
 @error_logger
 class Photo:

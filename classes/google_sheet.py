@@ -1,6 +1,6 @@
 import gspread_asyncio
 from google.oauth2.service_account import Credentials
-from loggers import error_logger
+from utils.loggers import error_logger
 
 @error_logger
 class GoogleSheet:

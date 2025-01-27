@@ -4,7 +4,7 @@ from functools import wraps
 
 logging.basicConfig(level=logging.ERROR,
                     format='%(asctime)s - %(levelname)s - %(message)s',
-                    filename='error.log',
+                    filename='../error.log',
                     encoding='utf-8',
                     )
 

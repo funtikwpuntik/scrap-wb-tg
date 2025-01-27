@@ -5,11 +5,11 @@ import os
 from aiogram.utils.media_group import MediaGroupBuilder
 from dotenv import load_dotenv
 from bot import bot
-from article import Article
-from google_sheet import GoogleSheet
-from loggers import error_logger
-from photo import Photo
-from utils import dict_to_data, to_csv
+from classes.article import Article
+from classes.google_sheet import GoogleSheet
+from utils.loggers import error_logger
+from classes.photo import Photo
+from utils.utils import dict_to_data, to_csv
 
 load_dotenv()
 router = Router()

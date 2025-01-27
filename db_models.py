@@ -24,7 +24,7 @@ class Photos(Base):
 
 
 # создание файла базы данных, если отсутствует
-if not os.path.exists('database.db'):
-    engine = create_engine("sqlite+pysqlite:///database.db", echo=True)
+if not os.path.exists('db/database.db'):
+    engine = create_engine("sqlite+pysqlite:///db/database.db", echo=True)
     Base.metadata.create_all(engine)
 

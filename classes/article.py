@@ -2,7 +2,7 @@ from typing import Dict
 import aiohttp
 from aiohttp.web_exceptions import HTTPNotFound
 
-from loggers import error_logger
+from utils.loggers import error_logger
 
 @error_logger
 class Article:

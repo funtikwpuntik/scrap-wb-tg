@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, select, insert
 
 from db_models import Photos
-from loggers import error_logger
+from utils.loggers import error_logger
 
 
 @error_logger
@@ -10,7 +10,7 @@ class Storage:
     Взаимодействие с бд
     """
     def __init__(self):
-        self.engine = create_engine("sqlite+pysqlite:///database.db", echo=True)
+        self.engine = create_engine("sqlite+pysqlite:///db/database.db", echo=True)
         self.session = self.engine.connect()
 
     def get_photo_ids(self, article_id: int):
